@@ -1,0 +1,22 @@
+#ifndef GENERATIONCODE_H_INCLUDED
+#define GENERATIONCODE_H_INCLUDED
+#include <stdlib.h>
+#include <stdio.h>
+
+void ecrire_fichier(int choix, int temps, int LED)
+{
+    int i;
+    FILE* pointeur = fopen("C:/Users/lucas/Documents/Exia année 1/Projets/Projet 1/coeur/param.h", "w+");
+
+    if (pointeur == NULL)
+    {
+        printf("erreur \n");
+        exit(-1);
+    }
+
+    fprintf(pointeur, "%s %d\n", "#define PARAM ", choix);
+    fprintf(pointeur, "%s %d\n", "#define LED ", LED);
+    fclose(pointeur);
+}
+
+#endif
