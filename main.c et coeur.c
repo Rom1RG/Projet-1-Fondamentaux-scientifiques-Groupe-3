@@ -58,7 +58,7 @@ void loop()
     bpm = bpm + 1 ; //Incrémentation de bpm a chaque cycle
     mark = 1; // Marqueur permettant de ne pas faire plusieurs fois le calcul sur la meme intentité
     compteur +=1;
-    switch (PARAM)
+    switch (PARAM) //Boucle qui permet d'appeller le mode de clignotement , le compteur permet de mémoriser l'avancement dans une fonction
   {
     case 1 :
       clignotement_total ();
