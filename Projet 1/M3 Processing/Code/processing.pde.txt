@@ -1,0 +1,26 @@
+//From Arduino to Processing to Txt or cvs etc.
+//import
+import processing.serial.*;
+//declare
+PrintWriter output; // Permet d'imprimer des caractères à la sortie
+Serial udSerial; // Définition d'une liaison série
+
+void setup() {
+  udSerial = new Serial(this, Serial.list()[0], 9600); // Définie le port sur lequel on va chercher les données
+  output = createWriter ("Battements.csv"); // Affiche le nombre de Battements dans un fichier .csv en sortie
+}
+
+  void draw() {
+    if (udSerial.available() > 0) { // On définit un SI, si on envoie une donnée sur la liaison série on fait:
+      String SenVal = udSerial.readString(); // On affecte les valeurs qui sortent de l'Arduino à SenVal
+      if (SenVal != null) { // Si les valeurs de SenVal sont différentes de 0 
+        output.print(SenVal); // On affiche la valeurs de sortie SenVal
+      }
+    }
+  }
+
+  void keyPressed(){
+    output.flush(); // S'assure que toutes les données ont été écrite dans le fichier avec qu'on le ferme
+    output.close(); // On ferme le fichier où l"on a lis les données
+    exit(); 
+  }
