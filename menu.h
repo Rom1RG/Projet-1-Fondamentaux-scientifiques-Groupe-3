@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int menu()
+int menu() //Permet d'afficher le texte du menu.
 {
     int choix;
     printf("Veuillez selectionner quel type de clignotement doit etre applique au coeur de LEDs\n");
