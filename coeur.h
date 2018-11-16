@@ -1,6 +1,6 @@
 int pinLed1, pinLed2, pinLed3,pinLed4,pinLed5,pinLed6,pinLed7,pinLed8,pinLed9,pinLed10,temps;
 
-
+//Les fonctions présentent dans ce code permettent les différent clignotements des LEDs, HIGH = LED allumé; LOW = LED éteinte.
 void clignotement_total ()
 {
     digitalWrite(pinLed1, HIGH);
