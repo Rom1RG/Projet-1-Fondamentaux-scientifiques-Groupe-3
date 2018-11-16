@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void ecrire_fichier(int choix, int temps, int LED)
+void ecrire_fichier(int choix, int LED)
 {
     int i;
     FILE* pointeur = fopen("C:/Users/lucas/Documents/Exia année 1/Projets/Projet 1/coeur/param.h", "w+"); //Genere le param.h dans un dossier.
